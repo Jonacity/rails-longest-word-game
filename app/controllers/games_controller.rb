@@ -49,13 +49,13 @@ class GamesController < ApplicationController
 
   def gen_message(flag_word, flag_grid)
     if flag_word == false && flag_grid == false
-      message = "Sorry but your word does not exist and is not part of the grid : #{@letters}"
+      message = "0. Sorry but your word does not exist and is not part of the grid : #{@letters}"
     elsif flag_word == false
-      message = "Sorry but \"#{@word}\" is not an english word"
+      message = "0. Sorry but \"#{@word}\" is not an english word"
     elsif flag_grid == false
-      message = "Sorry but \"#{@word}\" is not in the grid : #{@letters}"
+      message = "0. Sorry but \"#{@word}\" is not in the grid : #{@letters}"
     else
-      message = "Well done! \"#{@word}\" is a valid english word"
+      message = "#{@word.length * 10}. Well done! \"#{@word}\" is a valid english word"
     end
     return message
   end
